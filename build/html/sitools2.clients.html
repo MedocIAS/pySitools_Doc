@@ -1,0 +1,616 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>sitools2.clients package &#8212; pySitools2_1.0 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="sitools2.core package" href="sitools2.core.html" />
+    <link rel="prev" title="sitools2 package" href="sitools2.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="sitools2-clients-package">
+<h1>sitools2.clients package<a class="headerlink" href="#sitools2-clients-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-sitools2.clients.gaia_client_medoc">
+<span id="sitools2-clients-gaia-client-medoc-module"></span><h2>sitools2.clients.gaia_client_medoc module<a class="headerlink" href="#module-sitools2.clients.gaia_client_medoc" title="Permalink to this headline">¶</a></h2>
+<p>This script has been designed to give python programmers an easy way to 
+interrogate medoc gaia-dem sitools2 interface. You can make a search providing 
+a date range and get your selection very easilly.
+&#64;author: Pablo ALINGERY for IAS 07-03-2013</p>
+<dl class="class">
+<dt id="sitools2.clients.gaia_client_medoc.Gaia_data">
+<em class="property">class </em><code class="descclassname">sitools2.clients.gaia_client_medoc.</code><code class="descname">Gaia_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.gaia_client_medoc.Gaia_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Definition de la classe Gaia_data</p>
+<dl class="docutils">
+<dt>download <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>The url of the data on MEDOC server</dd>
+<dt>sunum_193 <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>id of the sunum used to build the current record</dd>
+<dt>date_obs <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Observation date (UTC) without time zone of the record computed by IAS</dd>
+<dt>filename <span class="classifier-delimiter">:</span> <span class="classifier">str </span></dt>
+<dd>Name of file containg DEM_aia_#date_obs</dd>
+<dt>temp_fits_rice_uri <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>uri of the temperature image preview</dd>
+<dt>em_fits_rice_uri <span class="classifier-delimiter">:</span> <span class="classifier">str </span></dt>
+<dd>uri of the emision image preview</dd>
+<dt>chi2_fits_rice_uri <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>uri of the Chi2 image preview</dd>
+</dl>
+<dl class="docutils">
+<dt>get_file()</dt>
+<dd>Donwload the record</dd>
+</dl>
+<dl class="method">
+<dt id="sitools2.clients.gaia_client_medoc.Gaia_data.compute_attributes">
+<code class="descname">compute_attributes</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.gaia_client_medoc.Gaia_data.compute_attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sitools2.clients.gaia_client_medoc.Gaia_data.display">
+<code class="descname">display</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.gaia_client_medoc.Gaia_data.display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sitools2.clients.gaia_client_medoc.Gaia_data.get_file">
+<code class="descname">get_file</code><span class="sig-paren">(</span><em>filename=None</em>, <em>target_dir=None</em>, <em>quiet=False</em>, <em>filetype=None</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.gaia_client_medoc.Gaia_data.get_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the get_file() to retrieve data from MEDOC server</p>
+<dl class="docutils">
+<dt>filename <span class="classifier-delimiter">:</span> <span class="classifier">str </span></dt>
+<dd>Name of the file , rename the default name using that parameter</dd>
+<dt>target_dir <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>The directory in which you will retreive the data
+If it does not exist it will be created</dd>
+<dt>quiet <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd>Do not print info concerning the data downloaded if that is set to 
+‘True’</dd>
+</dl>
+<p>filetype : str
+Can be ‘temp’, ‘em’, ‘width’ or ‘chi2’
+Type of file downloaded</p>
+<p>MEDOC files on your current or targer_dir directory</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.gaia_client_medoc.Sdo_IAS_gaia_dataset">
+<code class="descclassname">sitools2.clients.gaia_client_medoc.</code><code class="descname">Sdo_IAS_gaia_dataset</code><span class="sig-paren">(</span><em>Class_heritage</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.gaia_client_medoc.Sdo_IAS_gaia_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define a function that only return an existing instance of a Class 
+from the dictionary instances define above or add a new element to 
+instances</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.gaia_client_medoc.gaia_get">
+<code class="descclassname">sitools2.clients.gaia_client_medoc.</code><code class="descname">gaia_get</code><span class="sig-paren">(</span><em>gaia_list=[]</em>, <em>target_dir=None</em>, <em>download_type=None</em>, <em>type=None</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.gaia_client_medoc.gaia_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Donwload gaia dem data from MEDOC server</p>
+<dl class="docutils">
+<dt>gaia_list <span class="classifier-delimiter">:</span> <span class="classifier">list of gaia_data objects</span></dt>
+<dd>The result of gaia_search can be passed as an argument of that function
+The size of the list must be &gt;0</dd>
+<dt>target_dir <span class="classifier-delimiter">:</span> <span class="classifier">str </span></dt>
+<dd>User can specify the directory of download</dd>
+<dt>download_type <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Can be ‘TAR’ or ‘ZIP’</dd>
+</dl>
+<dl class="docutils">
+<dt>ValueError</dt>
+<dd>Parameter not allowed
+Nothing to download gaia_list is empty</dd>
+</dl>
+<p>Files located in the target_dir directory</p>
+<blockquote>
+<div>&gt;&gt;&gt;gaia_data_list = gaia_search(dates=[d1,d2], nb_res_max=10)
+&gt;&gt;&gt;gaia_get(gaia_list=gaia_data_list)
+&gt;&gt;&gt;gaia_get(gaia_list=gaia_data_list, target_dir=’results’)
+&gt;&gt;&gt;gaia_get(gaia_list=gaia_data_list,download_type=”tar”)</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.gaia_client_medoc.gaia_search">
+<code class="descclassname">sitools2.clients.gaia_client_medoc.</code><code class="descname">gaia_search</code><span class="sig-paren">(</span><em>dates=None</em>, <em>nb_res_max=-1</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.gaia_client_medoc.gaia_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the gaia_search() from pySitools2 library for Sitools2 SDO instance 
+located at IAS</p>
+<dl class="docutils">
+<dt>dates <span class="classifier-delimiter">:</span> <span class="classifier">datetime </span></dt>
+<dd>Interval of dates within you wish to make a research, it must be 
+specifed and composed of 2 datetime elements d1 d2, with d2 &gt;d1</dd>
+<dt>nb_res_max <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd>Nbr of results you wish to display from the results 
+Must be an integer and if specified must be &gt;0</dd>
+</dl>
+<dl class="docutils">
+<dt>ValueError</dt>
+<dd>Parameter is not allowed
+dates not specified
+dates not a list of two elements
+d1&gt;d2
+nb_res_max not allowed</dd>
+<dt>TypeError</dt>
+<dd>dates are not datetime object</dd>
+</dl>
+<p>gaia_data list</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.gaia_client_medoc.get_selection">
+<code class="descclassname">sitools2.clients.gaia_client_medoc.</code><code class="descname">get_selection</code><span class="sig-paren">(</span><em>gaia_list=[]</em>, <em>download_type='TAR'</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.gaia_client_medoc.get_selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Donwload a selection from MEDOC server tar or zip file</p>
+<dl class="docutils">
+<dt>gaia_list <span class="classifier-delimiter">:</span> <span class="classifier">list of Sdo_data objects</span></dt>
+<dd>The result of media_search can be passed as an argument of that 
+function.</dd>
+<dt>download_type <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Can be ‘TAR’ or ‘ZIP’</dd>
+<dt><a href="#id1"><span class="problematic" id="id2">**</span></a>kwds <span class="classifier-delimiter">:</span> <span class="classifier">any </span></dt>
+<dd>Can value target_dir for ex</dd>
+<dt>target_dir <span class="classifier-delimiter">:</span> <span class="classifier">str </span></dt>
+<dd>User can specify the directory of download</dd>
+</dl>
+<p>Files located in the current directory</p>
+<blockquote>
+<div><p>&gt;&gt;&gt;gaia_data_list = gaia_search(dates=[d1,d2], nb_res_max=10)
+&gt;&gt;&gt;get_selection(gaia_list=gaia_data_list,download_type=’TAR’)
+&gt;&gt;&gt;gaia_get(gaia_list=gaia_data_list,download_type=”TAR”)
+&gt;&gt;&gt;get_selection(gaia_list=gaia_data_list, target_dir=’results’,</p>
+<blockquote>
+<div>download_type=’TAR’)</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.gaia_client_medoc.main">
+<code class="descclassname">sitools2.clients.gaia_client_medoc.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.gaia_client_medoc.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.gaia_client_medoc.singleton">
+<code class="descclassname">sitools2.clients.gaia_client_medoc.</code><code class="descname">singleton</code><span class="sig-paren">(</span><em>class_def</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.gaia_client_medoc.singleton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Definition de la classe Sdo_aia_dataset that heritates of Dataset
+This following classes will only have one instance</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-sitools2.clients.sdo_client_medoc">
+<span id="sitools2-clients-sdo-client-medoc-module"></span><h2>sitools2.clients.sdo_client_medoc module<a class="headerlink" href="#module-sitools2.clients.sdo_client_medoc" title="Permalink to this headline">¶</a></h2>
+<p>This script has been designed to give python programmers an easy way to
+interrogate media sitools2 interface. You can make a search with the following
+entries : a date range , a wavelenghth or multiple wavelengths , a cadence.
+You will have as a result a list of Sdo_data objets on which you can apply the
+method display() that will give you for each the recnum, the sunum, the
+date_obs, the wavelength, the ias_location, the exptime and t_rec_index
+For each result you will be able to call metadata_search() method in order to
+have the metadata information.
+&#64;author: Pablo ALINGERY for IAS 28-08-2012</p>
+<dl class="function">
+<dt id="sitools2.clients.sdo_client_medoc.Sdo_aia_dataset">
+<code class="descclassname">sitools2.clients.sdo_client_medoc.</code><code class="descname">Sdo_aia_dataset</code><span class="sig-paren">(</span><em>Class_heritage</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.Sdo_aia_dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="sitools2.clients.sdo_client_medoc.Sdo_data">
+<em class="property">class </em><code class="descclassname">sitools2.clients.sdo_client_medoc.</code><code class="descname">Sdo_data</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.Sdo_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Definition de la classe Sdo_data</p>
+<dl class="docutils">
+<dt>url <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>The url of the data on MEDOC server</dd>
+<dt>recnum <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Id of the resource in data db
+number of records in level-1 file
+Attention recnum is unique for a serie</dd>
+<dt>sunum <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Another Id of the SDO data_sums db
+Attention you can several records wih same sunum</dd>
+<dt>date_obs <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Observation date (UTC) without time zone of the record computed by IAS</dd>
+<dt>series_name <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Name of the series name , can b hmi.m_720s or aia.lev1 etc …</dd>
+<dt>wave <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Wavelenght of the record</dd>
+<dt>ias_location <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Location of the data at IAS MEDOC disks</dd>
+<dt>ias_path <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>URL of the data , used for hmi redonnant with url
+To analysed : remove it …</dd>
+<dt>exptime <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Exposure time</dd>
+<dt>t_rec_index <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>index of T_REC in db
+Can be used to identify a record in db</dd>
+<dt>harpnum <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>Hmi active region patch number for hmi sharp data</dd>
+</dl>
+<dl class="docutils">
+<dt>get_file()</dt>
+<dd>Donwload the record</dd>
+<dt>metadata_search()</dt>
+<dd>Print meta information</dd>
+</dl>
+<dl class="method">
+<dt id="sitools2.clients.sdo_client_medoc.Sdo_data.compute_attributes">
+<code class="descname">compute_attributes</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.Sdo_data.compute_attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="sitools2.clients.sdo_client_medoc.Sdo_data.display">
+<code class="descname">display</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.Sdo_data.display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a representation of SDO data from MEDOC server</p>
+<p>print __repr__()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sitools2.clients.sdo_client_medoc.Sdo_data.get_file">
+<code class="descname">get_file</code><span class="sig-paren">(</span><em>decompress=False</em>, <em>filename=None</em>, <em>target_dir=None</em>, <em>quiet=False</em>, <em>segment=None</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.Sdo_data.get_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download hmi and aia data from MEDOC server</p>
+<dl class="docutils">
+<dt>decompress <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd>fits SDO data are rice-compressed
+That param indicated that you wish to get uncompressed data
+Defautl value is False</dd>
+<dt>filename <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Specify a file name so the file retrieve will be name as specified
+Default value None</dd>
+<dt>target_dir <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>User can specify the directory of download
+By design the files are downloaded in the current dir</dd>
+<dt>quiet <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd>set print output active or not
+By design the output is active
+For a quiet get_file process set quiet=True</dd>
+<dt>segment <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Type of the file
+Can value aia.lev1 or spikes for SDO/AIA-LEV1
+Can value ‘bitmap’, ‘Bp_err’, ‘Bt’,’conf_disambig’, …</dd>
+</dl>
+<dl class="docutils">
+<dt>ValueError</dt>
+<dd>parameter not allowed</dd>
+</dl>
+<p>Files located in the target_dir directory</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="sitools2.clients.sdo_client_medoc.Sdo_data.metadata_search">
+<code class="descname">metadata_search</code><span class="sig-paren">(</span><em>server=None</em>, <em>keywords=[]</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.Sdo_data.metadata_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provide metadata information from MEDOC server</p>
+<dl class="docutils">
+<dt>server <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Name of the MEDOC SOLAR server</dd>
+<dt>keywords <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
+<dd>List of names of metadata that you wish to have in the output.</dd>
+</dl>
+<dl class="docutils">
+<dt>ValueError</dt>
+<dd>parameter is not allowed
+keyword not specified
+keyword is not a list type
+server is unknown
+keyword does not exist for the dataset
+no data returned</dd>
+</dl>
+<blockquote>
+<div>List of dictionaries of the data requested
+Returns the exact data from db</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="sitools2.clients.sdo_client_medoc.Sdo_dataset">
+<em class="property">class </em><code class="descclassname">sitools2.clients.sdo_client_medoc.</code><code class="descname">Sdo_dataset</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.Sdo_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="sitools2.core.html#sitools2.core.pySitools2.Dataset" title="sitools2.core.pySitools2.Dataset"><code class="xref py py-class docutils literal"><span class="pre">sitools2.core.pySitools2.Dataset</span></code></a></p>
+<p>Definition de la classe Sdo_dataset that heritates of Dataset
+Can have several instances</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.sdo_client_medoc.Sdo_ias_sdo_dataset">
+<code class="descclassname">sitools2.clients.sdo_client_medoc.</code><code class="descname">Sdo_ias_sdo_dataset</code><span class="sig-paren">(</span><em>Class_heritage</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.Sdo_ias_sdo_dataset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.sdo_client_medoc.main">
+<code class="descclassname">sitools2.clients.sdo_client_medoc.</code><code class="descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.sdo_client_medoc.media_get">
+<code class="descclassname">sitools2.clients.sdo_client_medoc.</code><code class="descname">media_get</code><span class="sig-paren">(</span><em>media_data_list=[]</em>, <em>target_dir=None</em>, <em>download_type=None</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.media_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Donwload hmi and aia data from MEDOC server</p>
+<dl class="docutils">
+<dt>media_data_list <span class="classifier-delimiter">:</span> <span class="classifier">list of Sdo_data objects</span></dt>
+<dd>The result of media_search can be passed as an argument of that
+function.
+The size of the list must be &gt;0</dd>
+<dt>target_dir <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>User can specify the directory of download</dd>
+<dt>download_type <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Can be ‘TAR’ or ‘ZIP’</dd>
+</dl>
+<dl class="docutils">
+<dt>ValueError</dt>
+<dd>In case parameter media_data_list is empty</dd>
+</dl>
+<p>Files located in the target_dir directory</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sdo_data_list</span> <span class="o">=</span> <span class="n">media_search</span><span class="p">(</span>
+<span class="go">                        dates=[d1,d2],</span>
+<span class="go">                        series=&#39;hmi.m_720s&#39;,</span>
+<span class="go">                        nb_res_max=10)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">media_get</span><span class="p">(</span><span class="n">MEDIA_DATA_LIST</span><span class="o">=</span><span class="n">sdo_data_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">media_get</span><span class="p">(</span><span class="n">MEDIA_DATA_LIST</span><span class="o">=</span><span class="n">sdo_data_list</span><span class="p">,</span> <span class="n">target_dir</span><span class="o">=</span><span class="s1">&#39;results&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">media_get</span> <span class="p">(</span><span class="n">media_data_list</span><span class="o">=</span><span class="n">sdo_data_list</span><span class="p">,</span><span class="n">DOWNLOAD_TYPE</span><span class="o">=</span><span class="s2">&quot;tar&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.sdo_client_medoc.media_get_selection">
+<code class="descclassname">sitools2.clients.sdo_client_medoc.</code><code class="descname">media_get_selection</code><span class="sig-paren">(</span><em>server=None</em>, <em>media_data_list=[]</em>, <em>download_type='TAR'</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.media_get_selection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Donwload a selection from MEDOC server tar or zip file</p>
+<dl class="docutils">
+<dt>server <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Name of the MEDOC SOLAR server</dd>
+<dt>media_data_list <span class="classifier-delimiter">:</span> <span class="classifier">list of Sdo_data objects</span></dt>
+<dd>The result of media_search can be passed as an argument</dd>
+<dt>download_type <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Can be ‘TAR’ or ‘ZIP’</dd>
+</dl>
+<dl class="docutils">
+<dt>ValueError</dt>
+<dd>server parameter value is not allowed
+media_data_list parameter value is empty</dd>
+</dl>
+<p>Files located in the target_dir directory</p>
+<dl class="docutils">
+<dt>&gt;&gt;&gt;sdo_data_list = media_search(</dt>
+<dd><blockquote class="first">
+<div>server=’<a class="reference external" href="http://idoc-medoc.ias.u-psud.fr">http://idoc-medoc.ias.u-psud.fr</a>’,
+dates=[d1,d2],
+series=’hmi.m_720s’,
+nb_res_max=10</div></blockquote>
+<p class="last">)</p>
+</dd>
+<dt>&gt;&gt;&gt;media_get_selection(</dt>
+<dd><blockquote class="first">
+<div>media_data_list=sdo_data_list,
+download_type=’TAR’</div></blockquote>
+<p class="last">)</p>
+</dd>
+</dl>
+<p>&gt;&gt;&gt;media_get (media_data_list=sdo_data_list,download_type=”tar”)
+&gt;&gt;&gt;media_get_selection(</p>
+<blockquote>
+<div><blockquote>
+<div>MEDIA_DATA_LIST=sdo_data_list,
+target_dir=’results’,
+download_type=’TAR’</div></blockquote>
+<p>)</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.sdo_client_medoc.media_metadata_search">
+<code class="descclassname">sitools2.clients.sdo_client_medoc.</code><code class="descname">media_metadata_search</code><span class="sig-paren">(</span><em>server=None</em>, <em>media_data_list=[]</em>, <em>keywords=[]</em>, <em>recnum_list=[]</em>, <em>series=None</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.media_metadata_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provide metadata information from MEDOC server</p>
+<dl class="docutils">
+<dt>server <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Name of the MEDOC SOLAR server</dd>
+<dt>media_data_list <span class="classifier-delimiter">:</span> <span class="classifier">list of Sdo_data objects</span></dt>
+<dd>Result of media_search can be passed as an argument of that function.</dd>
+<dt>keywords <span class="classifier-delimiter">:</span> <span class="classifier">list of str</span></dt>
+<dd>List of names of metadata that you wish to have in the output.</dd>
+<dt>recnum_list <span class="classifier-delimiter">:</span> <span class="classifier">list of integer</span></dt>
+<dd>List of recnum identifier for a series given
+series MUST be provided in case recnum_list is not null
+Computed in case media_data_list is provided</dd>
+<dt>series <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>name of the series requested
+That param is computed in case media_data_list is provided</dd>
+</dl>
+<dl class="docutils">
+<dt>ValueError</dt>
+<dd>Parameter not in allowed list
+keyword not specified
+media_data_list is none and server is not specified
+server not allowed
+recnum_list is null
+keyword does not exist for the serie name specified</dd>
+<dt>TypeError</dt>
+<dd>keyword no a list type</dd>
+</dl>
+<blockquote>
+<div>List of dictionaries of the data requested
+Returns the exact data from db</div></blockquote>
+<blockquote>
+<div><dl class="docutils">
+<dt>&gt;&gt;&gt;sdo_data_list = media_search(</dt>
+<dd>DATES=[d1,d2],
+SERIES=’hmi.m_720s’,
+nb_res_max=10)</dd>
+<dt>&gt;&gt;&gt;&gt;meta = media_metadata_search(</dt>
+<dd>MEDIA_DATA_LIST=sdo_data_list,
+KEYWORDS=[‘date__obs’,’quality’,’cdelt1’,’cdelt2’,’crval1’])</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.sdo_client_medoc.media_search">
+<code class="descclassname">sitools2.clients.sdo_client_medoc.</code><code class="descname">media_search</code><span class="sig-paren">(</span><em>server=None</em>, <em>dates=None</em>, <em>waves=None</em>, <em>series=None</em>, <em>cadence=None</em>, <em>nb_res_max=-1</em>, <em>**kwds</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.media_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the generic search() from pySitools2 library for Sitools2 SDO
+instance located at IAS</p>
+<dl class="docutils">
+<dt>server <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Name of the MEDOC SOLAR server</dd>
+<dt>dates <span class="classifier-delimiter">:</span> <span class="classifier">datetime</span></dt>
+<dd>Interval of dates within you wish to make a research,
+It must be specifed and composed of 2 datetime elements d1 d2,
+with d2 &gt;d1</dd>
+<dt>waves <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>Wavelength (in Angstrom)
+Must be a list of wave integer or str
+waves must be in the list [94,131,171,193,211,304,335,1600,1700,6173]
+default value if not specified
+[‘94’,‘131’,‘171’,‘193’,‘211’,‘304’,‘335’,‘1600’,‘1700’]
+So aia.lev1 data</dd>
+<dt>series <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Series name of the data
+Can be aia.lev1 , hmi.sharp_720s …
+default value aia.lev1 if not specified</dd>
+<dt>cadence <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Can be a string and in list
+[‘12 sec’,‘1 min’, ‘2 min’, ‘10 min’, ‘30 min’,
+‘1 h’, ‘2 h’, ‘6 h’, ‘12 h’ , ‘1 day’, ‘12 min’]
+cadence default values ‘1 min’ or 12 min for hmi data</dd>
+<dt>nb_res_max <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd>Nbr of results you wish to display from the results
+Must be an integer and if specified must be &gt;0</dd>
+</dl>
+<dl class="docutils">
+<dt>ValueError</dt>
+<dd>parameter not in allowed_parmas list
+server parameter value is not allowed
+server not specified and hmi data requested ie wave = 6173
+dates parameter is not specified
+d1 &gt; d2 error date range
+wave list have not the same type
+wave arg is not in allowed list
+series not in aia or hmi allowed_list
+series hmi and wave not 6173
+series hmi and server medoc-sdo (only for aia data)
+Cadence not a list of one element
+Cadence not allowed
+nbr_res_max different than -1 and &lt;0
+server not known</dd>
+<dt>TypeError</dt>
+<dd>dates type is not a datetime type
+waves type is not a list of int
+series is not a str type</dd>
+</dl>
+<p>Sdo_data object list</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>&gt;&gt;&gt;sdo_data_list = media_search(</dt>
+<dd><blockquote class="first">
+<div>server=’<a class="reference external" href="http://idoc-medoc.ias.u-psud.fr">http://idoc-medoc.ias.u-psud.fr</a>’,
+dates=[d1,d2],
+series=’hmi.m_720s’,
+nb_res_max=10</div></blockquote>
+<p class="last">)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.sdo_client_medoc.metadata_info">
+<code class="descclassname">sitools2.clients.sdo_client_medoc.</code><code class="descname">metadata_info</code><span class="sig-paren">(</span><em>server=None</em>, <em>series='aia.lev1'</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.metadata_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Displays information concerning the dataset specified
+For example if you need the list of the fields in aia_dataset</p>
+<p>series : str
+name of the series requested
+default value aia.lev1</p>
+<dl class="docutils">
+<dt>ValueError</dt>
+<dd>server not in allowed list</dd>
+</dl>
+<p>dataset.display()</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="sitools2.clients.sdo_client_medoc.singleton">
+<code class="descclassname">sitools2.clients.sdo_client_medoc.</code><code class="descname">singleton</code><span class="sig-paren">(</span><em>class_def</em><span class="sig-paren">)</span><a class="headerlink" href="#sitools2.clients.sdo_client_medoc.singleton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorate a class so only one instance exist</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-sitools2.clients">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sitools2.clients" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="sitools2.html">sitools2 package</a><ul>
+      <li>Previous: <a href="sitools2.html" title="previous chapter">sitools2 package</a></li>
+      <li>Next: <a href="sitools2.core.html" title="next chapter">sitools2.core package</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, P. ALINGERY.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/sitools2.clients.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
