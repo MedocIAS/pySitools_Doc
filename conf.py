@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # pySitools2_1.0 documentation build configuration file, created by
-# sphinx-quickstart on Mon Nov  5 11:56:15 2018.
+# sphinx-quickstart on Tue Nov  6 11:05:21 2018.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
