@@ -12,6 +12,11 @@ Welcome to pySitools2's documentation!
 
    sitools2
 
+.. toctree::
+   :maxdepth: 2
+
+   includeme
+   
 
 Indices and tables
 ==================
